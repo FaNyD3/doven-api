@@ -1,0 +1,27 @@
+{
+    "name": "Mediciones",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "quantity": {
+            "type": "string",
+            "required": true
+        },
+        "createdAt": {
+            "type": "date",
+            "required": false,
+            "default": "$now"
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
+}

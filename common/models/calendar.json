@@ -1,0 +1,32 @@
+{
+    "name": "Calendar",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "activity": {
+            "type": "string",
+            "required": true
+        },
+        "date": {
+            "type": "$date",
+            "required": true
+        },
+        "hour": {
+            "type": "string",
+            "required": true
+        },
+        "pilotname": {
+            "type": "string",
+            "required": true
+        }
+
+    },
+
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
+}

@@ -1,0 +1,7 @@
+{
+  "db": {
+    "database": "doven",
+    "name": "db",
+    "connector": "mongodb"
+  }
+}

@@ -1,0 +1,62 @@
+{
+    "name": "Flight",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "enrollment": {
+            "type": "string",
+            "required": true
+        },
+        "createdAt": {
+            "type": "date",
+            "required": false,
+            "default": "$now"
+        },
+        "arrived": {
+            "type": "date",
+            "required": true
+        },
+        "departure": {
+            "type": "date",
+            "required": true
+        },
+        "type": {
+            "type": "string",
+            "required": true
+        },
+        "airline": {
+            "type": "string",
+            "required": true
+        },
+        "flightId": {
+            "type": "string",
+            "required": true
+        },
+        "pilotId": {
+            "type": "string",
+            "required": true
+        },
+        "airstripId": {
+            "type": "string",
+            "required": true
+        }
+    },
+    "validations": [],
+    "relations": {
+        "admin": {
+            "type": "belongsTo",
+            "model": "Admin",
+            "foreignKey": "pilotId"
+        },
+        "airstrip": {
+            "type": "belongsTo",
+            "model": "Airstrip",
+            "foreignKey": "airstripId"
+        }
+    },
+    "acls": [],
+    "methods": {}
+}
