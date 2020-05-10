@@ -62,5 +62,9 @@
   "Airstrip": {
     "dataSource": "db",
     "public": true
+  },
+  "pilots": {
+    "dataSource": "db",
+    "public": true
   }
 }

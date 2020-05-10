@@ -1,109 +1,109 @@
 {
-    "name": "Admin",
-    "base": "User",
-    "idInjection": true,
-    "options": {
-        "validateUpsert": true
+  "name": "Admin",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "password": {
+      "type": "string",
+      "required": true
     },
-    "properties": {
-        "password": {
-            "type": "string",
-            "required": true
-        },
-        "email": {
-            "type": "string",
-            "required": true
-        },
-        "name": {
-            "type": "string",
-            "required": true
-        },
-        "username": {
-            "type": "string",
-            "required": true
-        },
-        "lastName": {
-            "type": "string",
-            "required": true
-        },
-        "phone": {
-            "type": "string",
-            "required": true
-        },
-        "type": {
-            "type": "string",
-            "required": true
-        },
-        "lastDate": {
-            "type": "date",
-            "required": true
-        },
-        "status": {
-            "type": "string",
-            "required": true
-        },
-        "tags": {
-            "type": "string",
-            "required": true
-        },
-        "notes": {
-            "type": "string",
-            "required": true
-        },
-        "rate": {
-            "type": "number",
-            "required": true
-        },
-        "createdAt": {
-            "type": "date",
-            "required": false,
-            "default": "$now"
-        },
-        "pilotId": {
-            "type": "string",
-            "required": true
-        },
-        "flightId": {
-            "type": "string",
-            "required": true
-        },
-        "airstripId": {
-            "type": "string",
-            "required": true
-        }
+    "email": {
+      "type": "string",
+      "required": true
     },
-    "validations": [],
-    "relations": {
-        "flight": {
-            "type": "hasOne",
-            "model": "Flight",
-            "primaryKey": "pilotId"
-        },
-        "airstrip": {
-            "type": "belongsTo",
-            "model": "Airstrip",
-            "foreignKey": "airstripId"
-        }
-
+    "name": {
+      "type": "string",
+      "required": true
     },
-    "acls": [{
-            "accessType": "READ",
-            "principalType": "ROLE",
-            "principalId": "$everyone",
-            "permission": "ALLOW"
-        },
-        {
-            "accessType": "WRITE",
-            "principalType": "ROLE",
-            "principalId": "$everyone",
-            "permission": "ALLOW"
-        },
-        {
-            "accessType": "EXECUTE",
-            "principalType": "ROLE",
-            "principalId": "$everyone",
-            "permission": "ALLOW"
-        }
-    ],
-    "methods": {}
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "lastDate": {
+      "type": "date",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "tags": {
+      "type": "string",
+      "required": true
+    },
+    "notes": {
+      "type": "string",
+      "required": true
+    },
+    "rate": {
+      "type": "number",
+      "required": true
+    },
+    "createdAt": {
+      "type": "date",
+      "required": false,
+      "default": "$now"
+    },
+    "pilotId": {
+      "type": "string",
+      "required": true
+    },
+    "flightId": {
+      "type": "string",
+      "required": true
+    },
+    "airstripId": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "flight": {
+      "type": "hasOne",
+      "model": "Flight",
+      "primaryKey": "pilotId"
+    },
+    "airstrip": {
+      "type": "belongsTo",
+      "model": "Airstrip",
+      "foreignKey": "airstripId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
 }

@@ -1,59 +1,57 @@
 {
-    "name": "Airplain",
-    "base": "PersistedModel",
-    "idInjection": true,
-    "options": {
-        "validateUpsert": true
+  "name": "Airplain",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "airplainmodel": {
+      "type": "string",
+      "required": true
     },
-    "properties": {
-        "airplainmodel": {
-            "type": "string",
-            "required": true
-        },
-        "enrollment": {
-            "type": "string",
-            "required": true
-        },
-        "certificationM": {
-            "type": "string",
-            "required": true
-        },
-        "certificationA": {
-            "type": "string",
-            "required": true
-        },
-        "policyS": {
-            "type": "string",
-            "required": true
-        },
-        "binnacleV": {
-            "type": "string",
-            "required": true
-        },
-        "authorizationOER": {
-            "type": "string",
-            "required": true
-        },
-        "airline": {
-            "type": "string",
-            "required": true
-        },
-        "createdAt": {
-            "type": "date",
-            "required": false,
-            "default": "$now"
-        }
-
-
+    "enrollment": {
+      "type": "string",
+      "required": true
     },
-    "validations": [],
-    "relations": {
-        "flights": {
-            "type": "hasMany",
-            "model": "Flight",
-            "foreignKey": "id"
-        }
+    "certificationM": {
+      "type": "string",
+      "required": true
     },
-    "acls": [],
-    "methods": {}
+    "certificationA": {
+      "type": "string",
+      "required": true
+    },
+    "policyS": {
+      "type": "string",
+      "required": true
+    },
+    "binnacleV": {
+      "type": "string",
+      "required": true
+    },
+    "authorizationOER": {
+      "type": "string",
+      "required": true
+    },
+    "airline": {
+      "type": "string",
+      "required": true
+    },
+    "createdAt": {
+      "type": "date",
+      "required": false,
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "flights": {
+      "type": "hasMany",
+      "model": "Flight",
+      "foreignKey": "id"
+    }
+  },
+  "acls": [],
+  "methods": {}
 }

@@ -1,38 +1,38 @@
 {
-    "name": "AppUser",
-    "base": "PersistedModel",
-    "idInjection": true,
-    "options": {
-        "validateUpsert": true
+  "name": "AppUser",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
     },
-    "properties": {
-        "name": {
-            "type": "string",
-            "required": true
-        },
-        "role": {
-            "type": "string",
-            "required": true
-        },
-        "email": {
-            "type": "string",
-            "required": true
-        },
-        "birthday": {
-            "type": "date",
-            "required": true
-        },
-        "password": {
-            "type": "string",
-            "required": true
-        },
-        "airstripname": {
-            "type": "string",
-            "required": true
-        }
+    "role": {
+      "type": "string",
+      "required": true
     },
-    "validations": [],
-    "relations": {},
-    "acls": [],
-    "methods": {}
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "birthday": {
+      "type": "date",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "airstripname": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
 }
