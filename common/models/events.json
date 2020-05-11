@@ -27,6 +27,24 @@
     "color": {
       "type": "string",
       "required": true
+    },
+    "origin": {
+      "type": "string",
+      "required": true,
+      "default": "GDL"
+    },
+    "destination": {
+      "type": "string",
+      "required": true,
+      "default": "CDMX"
+    },
+    "firstPilotId": {
+      "type": "string",
+      "required": true
+    },
+    "secondPilotId": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
