@@ -66,5 +66,9 @@
   "pilots": {
     "dataSource": "db",
     "public": true
+  },
+  "events": {
+    "dataSource": "db",
+    "public": true
   }
 }
