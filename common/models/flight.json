@@ -1,5 +1,5 @@
 {
-  "name": "Flight",
+  "name": "flight",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -8,6 +8,24 @@
   "properties": {
     "enrollment": {
       "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      }
+    },
+    "flightNumber":{
+      "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      }
+    },
+    "hour": {
+      "type": "number",
+      "required": true
+    },
+    "minutes": {
+      "type": "number",
       "required": true
     },
     "createdAt": {
@@ -15,23 +33,23 @@
       "required": false,
       "default": "$now"
     },
-    "arrived": {
+    "arrival": {
       "type": "date",
+      "required": true
+    },
+    "origin": {
+      "type": "string",
+      "required": true
+    },
+    "destination": {
+      "type": "string",
       "required": true
     },
     "departure": {
       "type": "date",
       "required": true
     },
-    "type": {
-      "type": "string",
-      "required": true
-    },
     "airline": {
-      "type": "string",
-      "required": true
-    },
-    "flightId": {
       "type": "string",
       "required": true
     },
@@ -39,24 +57,16 @@
       "type": "string",
       "required": true
     },
-    "airstripId": {
+    "copilotId": {
       "type": "string",
       "required": true
+    },
+    "eventId": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],
-  "relations": {
-    "admin": {
-      "type": "belongsTo",
-      "model": "Admin",
-      "foreignKey": "pilotId"
-    },
-    "airstrip": {
-      "type": "belongsTo",
-      "model": "Airstrip",
-      "foreignKey": "airstripId"
-    }
-  },
   "acls": [],
   "methods": {}
 }

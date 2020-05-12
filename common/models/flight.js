@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = function(Flight) {
+module.exports = function(flight) {
 
 };
