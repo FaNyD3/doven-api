@@ -58,33 +58,10 @@
       "type": "date",
       "required": false,
       "default": "$now"
-    },
-    "pilotId": {
-      "type": "string",
-      "required": true
-    },
-    "flightId": {
-      "type": "string",
-      "required": true
-    },
-    "airstripId": {
-      "type": "string",
-      "required": true
     }
   },
   "validations": [],
-  "relations": {
-    "flight": {
-      "type": "hasOne",
-      "model": "Flight",
-      "primaryKey": "pilotId"
-    },
-    "airstrip": {
-      "type": "belongsTo",
-      "model": "Airstrip",
-      "foreignKey": "airstripId"
-    }
-  },
+  "relations": {},
   "acls": [
     {
       "accessType": "READ",

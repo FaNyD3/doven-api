@@ -59,7 +59,7 @@
     "dataSource": "db",
     "public": true
   },
-  "Airstrip": {
+  "airstrip": {
     "dataSource": "db",
     "public": true
   },

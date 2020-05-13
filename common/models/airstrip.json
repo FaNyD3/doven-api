@@ -1,16 +1,12 @@
 {
-  "name": "Airstrip",
+  "name": "airstrip",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "airstrip": {
-      "type": "string",
-      "required": true
-    },
-    "color": {
+    "name": {
       "type": "string",
       "required": true
     },
@@ -30,32 +26,25 @@
       "type": "string",
       "required": true
     },
-    "airstripId": {
-      "type": "string",
-      "required": true
-    },
     "pilotId": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "flightId": {
       "type": "string",
-      "required": true
+      "required": false
+    },
+    "lat": {
+      "type": "string",
+      "required": false
+    },
+    "lon": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],
-  "relations": {
-    "admin": {
-      "type": "hasMany",
-      "model": "Admin",
-      "foreignKey": "pilotId"
-    },
-    "flight": {
-      "type": "hasMany",
-      "model": "Flight",
-      "foreignKey": "flightId"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }
