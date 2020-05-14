@@ -1,5 +1,5 @@
 {
-  "name": "Airplain",
+  "name": "airplain",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

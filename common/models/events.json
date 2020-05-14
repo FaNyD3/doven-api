@@ -40,11 +40,11 @@
     },
     "firstPilotId": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "secondPilotId": {
       "type": "string",
-      "required": true
+      "required": false
     }
   },
   "validations": [],

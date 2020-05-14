@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = function(Airplain) {
+module.exports = function(airplain) {
 
 };
