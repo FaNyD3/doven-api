@@ -44,19 +44,14 @@
     "createdAt": {
       "type": "string",
       "required": true
+    },
+    "airstripPilotsId": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],
-  "relations": {
-    "flightId": {
-      "type": "hasOne",
-      "model": "Flight",
-      "foreignKey": "flightId",
-      "options": {
-        "nestRemoting": true
-      }
-    }
-  },
+  "relations": {},
   "acls": [
     {
       "accessType": "READ",

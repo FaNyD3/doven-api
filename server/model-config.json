@@ -70,5 +70,9 @@
   "events": {
     "dataSource": "db",
     "public": true
+  },
+  "airstripPilots": {
+    "dataSource": "db",
+    "public": true
   }
 }

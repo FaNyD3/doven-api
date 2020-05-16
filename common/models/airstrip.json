@@ -41,6 +41,10 @@
     "lon": {
       "type": "string",
       "required": false
+    },
+    "airstripPilotsId": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],

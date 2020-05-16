@@ -1,0 +1,6363 @@
+paths:
+  '/Users/{id}/accessTokens/{fk}':
+    get:
+      tags:
+        - User
+      summary: Buscar un elemento relacionado por id para accessTokens.
+      operationId: User.prototype.__findById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - User
+      summary: Suprimir un elemento relacionado por id para accessTokens.
+      operationId: User.prototype.__destroyById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - User
+      summary: Actualizar un elemento relacionado por id para accessTokens.
+      operationId: User.prototype.__updateById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Users/{id}/accessTokens':
+    get:
+      tags:
+        - User
+      summary: accessTokens consultas de User.
+      operationId: User.prototype.__get__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    post:
+      tags:
+        - User
+      summary: Crea una nueva instancia en accessTokens de este modelo.
+      operationId: User.prototype.__create__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - User
+      summary: Suprime todos los accessTokens de este modelo.
+      operationId: User.prototype.__delete__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Users/{id}/accessTokens/count':
+    get:
+      tags:
+        - User
+      summary: Recuentos accessTokens de User.
+      operationId: User.prototype.__count__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Users:
+    post:
+      tags:
+        - User
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: User.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - User
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: User.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - User
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: User.replaceOrCreate__put_Users
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - User
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: User.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Users/replaceOrCreate:
+    post:
+      tags:
+        - User
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: User.replaceOrCreate__post_Users_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Users/upsertWithWhere:
+    post:
+      tags:
+        - User
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: User.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Users/{id}/exists':
+    get:
+      tags:
+        - User
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'User.exists__get_Users_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Users/{id}':
+    head:
+      tags:
+        - User
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'User.exists__head_Users_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - User
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: User.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - User
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'User.replaceById__put_Users_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - User
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: User.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - User
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: User.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Users/{id}/replace':
+    post:
+      tags:
+        - User
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'User.replaceById__post_Users_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Users/findOne:
+    get:
+      tags:
+        - User
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: User.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Users/update:
+    post:
+      tags:
+        - User
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: User.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Users/count:
+    get:
+      tags:
+        - User
+      summary: Count instances of the model matched by where from the data source.
+      operationId: User.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Users/login:
+    post:
+      tags:
+        - User
+      summary: Login a user with username/email and password.
+      operationId: User.login
+      parameters:
+        - name: credentials
+          in: body
+          required: true
+          schema:
+            type: object
+        - name: include
+          in: query
+          description: >-
+            Related objects to include in the response. See the description of
+            return value for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: >+
+              El cuerpo de respuesta contiene propiedades de la AccessToken
+              creada durante el inicio de la sesión.
+
+              Dependiendo del valor del parámetro `include`, el cuerpo puede
+              contener propiedades adicionales:
+
+                - `user` - `U+007BUserU+007D` - Datos del usuario conectado actualmente. (`include=user`)
+
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Users/logout:
+    post:
+      tags:
+        - User
+      summary: Logout a user with access token.
+      operationId: User.logout
+      parameters: []
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Users/{id}/verify':
+    post:
+      tags:
+        - User
+      summary: Trigger user's identity verification with configured verifyOptions
+      operationId: User.prototype.verify
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Users/confirm:
+    get:
+      tags:
+        - User
+      summary: Confirm a user registration with identity verification token.
+      operationId: User.confirm
+      parameters:
+        - name: uid
+          in: query
+          required: true
+          type: string
+        - name: token
+          in: query
+          required: true
+          type: string
+        - name: redirect
+          in: query
+          required: false
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Users/reset:
+    post:
+      tags:
+        - User
+      summary: Reset password for a user with email.
+      operationId: User.resetPassword
+      parameters:
+        - name: options
+          in: body
+          required: true
+          schema:
+            type: object
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Users/change-password:
+    post:
+      tags:
+        - User
+      summary: Change a user's password.
+      operationId: User.changePassword
+      parameters:
+        - name: oldPassword
+          in: formData
+          required: true
+          type: string
+        - name: newPassword
+          in: formData
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Users/reset-password:
+    post:
+      tags:
+        - User
+      summary: Reset user's password via a password-reset token.
+      operationId: User.setPassword
+      parameters:
+        - name: newPassword
+          in: formData
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Admins/{id}/accessTokens/{fk}':
+    get:
+      tags:
+        - Admin
+      summary: Buscar un elemento relacionado por id para accessTokens.
+      operationId: Admin.prototype.__findById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: Admin id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - Admin
+      summary: Suprimir un elemento relacionado por id para accessTokens.
+      operationId: Admin.prototype.__destroyById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: Admin id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - Admin
+      summary: Actualizar un elemento relacionado por id para accessTokens.
+      operationId: Admin.prototype.__updateById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: Admin id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Admins/{id}/accessTokens':
+    get:
+      tags:
+        - Admin
+      summary: accessTokens consultas de Admin.
+      operationId: Admin.prototype.__get__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: Admin id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    post:
+      tags:
+        - Admin
+      summary: Crea una nueva instancia en accessTokens de este modelo.
+      operationId: Admin.prototype.__create__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: Admin id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - Admin
+      summary: Suprime todos los accessTokens de este modelo.
+      operationId: Admin.prototype.__delete__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: Admin id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Admins/{id}/accessTokens/count':
+    get:
+      tags:
+        - Admin
+      summary: Recuentos accessTokens de Admin.
+      operationId: Admin.prototype.__count__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: Admin id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Admins:
+    post:
+      tags:
+        - Admin
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: Admin.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Admin'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Admin'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - Admin
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: Admin.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Admin'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Admin'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - Admin
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: Admin.replaceOrCreate__put_Admins
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Admin'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Admin'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - Admin
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: Admin.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Admin'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Admins/replaceOrCreate:
+    post:
+      tags:
+        - Admin
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: Admin.replaceOrCreate__post_Admins_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Admin'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Admin'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Admins/upsertWithWhere:
+    post:
+      tags:
+        - Admin
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: Admin.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Admin'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Admin'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Admins/{id}/exists':
+    get:
+      tags:
+        - Admin
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Admin.exists__get_Admins_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Admins/{id}':
+    head:
+      tags:
+        - Admin
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Admin.exists__head_Admins_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - Admin
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: Admin.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Admin'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - Admin
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'Admin.replaceById__put_Admins_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Admin'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Admin'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - Admin
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: Admin.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - Admin
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: Admin.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: Admin id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Admin'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Admin'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Admins/{id}/replace':
+    post:
+      tags:
+        - Admin
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'Admin.replaceById__post_Admins_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Admin'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Admin'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Admins/findOne:
+    get:
+      tags:
+        - Admin
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: Admin.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Admin'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Admins/update:
+    post:
+      tags:
+        - Admin
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: Admin.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Admin'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Admins/count:
+    get:
+      tags:
+        - Admin
+      summary: Count instances of the model matched by where from the data source.
+      operationId: Admin.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Admins/login:
+    post:
+      tags:
+        - Admin
+      summary: Login a user with username/email and password.
+      operationId: Admin.login
+      parameters:
+        - name: credentials
+          in: body
+          required: true
+          schema:
+            type: object
+        - name: include
+          in: query
+          description: >-
+            Related objects to include in the response. See the description of
+            return value for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: >+
+              El cuerpo de respuesta contiene propiedades de la AccessToken
+              creada durante el inicio de la sesión.
+
+              Dependiendo del valor del parámetro `include`, el cuerpo puede
+              contener propiedades adicionales:
+
+                - `user` - `U+007BUserU+007D` - Datos del usuario conectado actualmente. (`include=user`)
+
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Admins/logout:
+    post:
+      tags:
+        - Admin
+      summary: Logout a user with access token.
+      operationId: Admin.logout
+      parameters: []
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Admins/{id}/verify':
+    post:
+      tags:
+        - Admin
+      summary: Trigger user's identity verification with configured verifyOptions
+      operationId: Admin.prototype.verify
+      parameters:
+        - name: id
+          in: path
+          description: Admin id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Admins/confirm:
+    get:
+      tags:
+        - Admin
+      summary: Confirm a user registration with identity verification token.
+      operationId: Admin.confirm
+      parameters:
+        - name: uid
+          in: query
+          required: true
+          type: string
+        - name: token
+          in: query
+          required: true
+          type: string
+        - name: redirect
+          in: query
+          required: false
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Admins/reset:
+    post:
+      tags:
+        - Admin
+      summary: Reset password for a user with email.
+      operationId: Admin.resetPassword
+      parameters:
+        - name: options
+          in: body
+          required: true
+          schema:
+            type: object
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Admins/change-password:
+    post:
+      tags:
+        - Admin
+      summary: Change a user's password.
+      operationId: Admin.changePassword
+      parameters:
+        - name: oldPassword
+          in: formData
+          required: true
+          type: string
+        - name: newPassword
+          in: formData
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Admins/reset-password:
+    post:
+      tags:
+        - Admin
+      summary: Reset user's password via a password-reset token.
+      operationId: Admin.setPassword
+      parameters:
+        - name: newPassword
+          in: formData
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Mediciones:
+    post:
+      tags:
+        - Mediciones
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: Mediciones.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Mediciones'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Mediciones'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - Mediciones
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: Mediciones.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Mediciones'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Mediciones'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - Mediciones
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: Mediciones.replaceOrCreate__put_Mediciones
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Mediciones'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Mediciones'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - Mediciones
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: Mediciones.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Mediciones'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Mediciones/replaceOrCreate:
+    post:
+      tags:
+        - Mediciones
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: Mediciones.replaceOrCreate__post_Mediciones_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Mediciones'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Mediciones'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Mediciones/upsertWithWhere:
+    post:
+      tags:
+        - Mediciones
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: Mediciones.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Mediciones'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Mediciones'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Mediciones/{id}/exists':
+    get:
+      tags:
+        - Mediciones
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Mediciones.exists__get_Mediciones_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Mediciones/{id}':
+    head:
+      tags:
+        - Mediciones
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Mediciones.exists__head_Mediciones_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - Mediciones
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: Mediciones.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Mediciones'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - Mediciones
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'Mediciones.replaceById__put_Mediciones_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Mediciones'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Mediciones'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - Mediciones
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: Mediciones.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - Mediciones
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: Mediciones.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: Mediciones id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Mediciones'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Mediciones'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Mediciones/{id}/replace':
+    post:
+      tags:
+        - Mediciones
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'Mediciones.replaceById__post_Mediciones_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Mediciones'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Mediciones'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Mediciones/findOne:
+    get:
+      tags:
+        - Mediciones
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: Mediciones.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Mediciones'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Mediciones/update:
+    post:
+      tags:
+        - Mediciones
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: Mediciones.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Mediciones'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Mediciones/count:
+    get:
+      tags:
+        - Mediciones
+      summary: Count instances of the model matched by where from the data source.
+      operationId: Mediciones.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Calendars:
+    post:
+      tags:
+        - Calendar
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: Calendar.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Calendar'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Calendar'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - Calendar
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: Calendar.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Calendar'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Calendar'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - Calendar
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: Calendar.replaceOrCreate__put_Calendars
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Calendar'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Calendar'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - Calendar
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: Calendar.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Calendar'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Calendars/replaceOrCreate:
+    post:
+      tags:
+        - Calendar
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: Calendar.replaceOrCreate__post_Calendars_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Calendar'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Calendar'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Calendars/upsertWithWhere:
+    post:
+      tags:
+        - Calendar
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: Calendar.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Calendar'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Calendar'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Calendars/{id}/exists':
+    get:
+      tags:
+        - Calendar
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Calendar.exists__get_Calendars_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Calendars/{id}':
+    head:
+      tags:
+        - Calendar
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Calendar.exists__head_Calendars_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - Calendar
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: Calendar.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Calendar'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - Calendar
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'Calendar.replaceById__put_Calendars_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Calendar'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Calendar'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - Calendar
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: Calendar.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - Calendar
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: Calendar.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: Calendar id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Calendar'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Calendar'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/Calendars/{id}/replace':
+    post:
+      tags:
+        - Calendar
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'Calendar.replaceById__post_Calendars_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Calendar'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Calendar'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Calendars/findOne:
+    get:
+      tags:
+        - Calendar
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: Calendar.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Calendar'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Calendars/update:
+    post:
+      tags:
+        - Calendar
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: Calendar.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Calendar'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /Calendars/count:
+    get:
+      tags:
+        - Calendar
+      summary: Count instances of the model matched by where from the data source.
+      operationId: Calendar.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /airplains:
+    post:
+      tags:
+        - airplain
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: airplain.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/airplain'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airplain'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - airplain
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: airplain.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/airplain'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airplain'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - airplain
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: airplain.replaceOrCreate__put_airplains
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/airplain'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airplain'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - airplain
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: airplain.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/airplain'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /airplains/replaceOrCreate:
+    post:
+      tags:
+        - airplain
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: airplain.replaceOrCreate__post_airplains_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/airplain'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airplain'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /airplains/upsertWithWhere:
+    post:
+      tags:
+        - airplain
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: airplain.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/airplain'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airplain'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airplains/{id}/exists':
+    get:
+      tags:
+        - airplain
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'airplain.exists__get_airplains_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airplains/{id}':
+    head:
+      tags:
+        - airplain
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'airplain.exists__head_airplains_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - airplain
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: airplain.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airplain'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - airplain
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'airplain.replaceById__put_airplains_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/airplain'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airplain'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - airplain
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: airplain.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - airplain
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: airplain.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: airplain id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/airplain'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airplain'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airplains/{id}/replace':
+    post:
+      tags:
+        - airplain
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'airplain.replaceById__post_airplains_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/airplain'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airplain'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /airplains/findOne:
+    get:
+      tags:
+        - airplain
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: airplain.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airplain'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /airplains/update:
+    post:
+      tags:
+        - airplain
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: airplain.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/airplain'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /airplains/count:
+    get:
+      tags:
+        - airplain
+      summary: Count instances of the model matched by where from the data source.
+      operationId: airplain.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /flights:
+    post:
+      tags:
+        - flight
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: flight.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/flight'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/flight'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - flight
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: flight.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/flight'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/flight'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - flight
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: flight.replaceOrCreate__put_flights
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/flight'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/flight'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - flight
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: flight.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/flight'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /flights/replaceOrCreate:
+    post:
+      tags:
+        - flight
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: flight.replaceOrCreate__post_flights_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/flight'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/flight'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /flights/upsertWithWhere:
+    post:
+      tags:
+        - flight
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: flight.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/flight'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/flight'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/flights/{id}/exists':
+    get:
+      tags:
+        - flight
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'flight.exists__get_flights_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/flights/{id}':
+    head:
+      tags:
+        - flight
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'flight.exists__head_flights_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - flight
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: flight.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/flight'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - flight
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'flight.replaceById__put_flights_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/flight'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/flight'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - flight
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: flight.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - flight
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: flight.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: flight id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/flight'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/flight'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/flights/{id}/replace':
+    post:
+      tags:
+        - flight
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'flight.replaceById__post_flights_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/flight'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/flight'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /flights/findOne:
+    get:
+      tags:
+        - flight
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: flight.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/flight'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /flights/update:
+    post:
+      tags:
+        - flight
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: flight.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/flight'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /flights/count:
+    get:
+      tags:
+        - flight
+      summary: Count instances of the model matched by where from the data source.
+      operationId: flight.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /AppUsers:
+    post:
+      tags:
+        - AppUser
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: AppUser.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/AppUser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AppUser'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - AppUser
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: AppUser.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/AppUser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AppUser'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - AppUser
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: AppUser.replaceOrCreate__put_AppUsers
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/AppUser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AppUser'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - AppUser
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: AppUser.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AppUser'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /AppUsers/replaceOrCreate:
+    post:
+      tags:
+        - AppUser
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: AppUser.replaceOrCreate__post_AppUsers_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/AppUser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AppUser'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /AppUsers/upsertWithWhere:
+    post:
+      tags:
+        - AppUser
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: AppUser.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/AppUser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AppUser'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/AppUsers/{id}/exists':
+    get:
+      tags:
+        - AppUser
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'AppUser.exists__get_AppUsers_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/AppUsers/{id}':
+    head:
+      tags:
+        - AppUser
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'AppUser.exists__head_AppUsers_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - AppUser
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: AppUser.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AppUser'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - AppUser
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'AppUser.replaceById__put_AppUsers_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/AppUser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AppUser'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - AppUser
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: AppUser.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - AppUser
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: AppUser.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: AppUser id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/AppUser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AppUser'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/AppUsers/{id}/replace':
+    post:
+      tags:
+        - AppUser
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'AppUser.replaceById__post_AppUsers_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/AppUser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AppUser'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /AppUsers/findOne:
+    get:
+      tags:
+        - AppUser
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: AppUser.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AppUser'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /AppUsers/update:
+    post:
+      tags:
+        - AppUser
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: AppUser.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/AppUser'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /AppUsers/count:
+    get:
+      tags:
+        - AppUser
+      summary: Count instances of the model matched by where from the data source.
+      operationId: AppUser.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airstrips/{id}/pilots/{fk}':
+    get:
+      tags:
+        - airstrip
+      summary: Buscar un elemento relacionado por id para pilots.
+      operationId: airstrip.prototype.__findById__pilots
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para pilots
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - airstrip
+      summary: Suprimir un elemento relacionado por id para pilots.
+      operationId: airstrip.prototype.__destroyById__pilots
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para pilots
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - airstrip
+      summary: Actualizar un elemento relacionado por id para pilots.
+      operationId: airstrip.prototype.__updateById__pilots
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para pilots
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airstrips/{id}/pilots':
+    get:
+      tags:
+        - airstrip
+      summary: pilots consultas de airstrip.
+      operationId: airstrip.prototype.__get__pilots
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    post:
+      tags:
+        - airstrip
+      summary: Crea una nueva instancia en pilots de este modelo.
+      operationId: airstrip.prototype.__create__pilots
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - airstrip
+      summary: Suprime todos los pilots de este modelo.
+      operationId: airstrip.prototype.__delete__pilots
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airstrips/{id}/pilots/count':
+    get:
+      tags:
+        - airstrip
+      summary: Recuentos pilots de airstrip.
+      operationId: airstrip.prototype.__count__pilots
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /airstrips:
+    post:
+      tags:
+        - airstrip
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: airstrip.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - airstrip
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: airstrip.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - airstrip
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: airstrip.replaceOrCreate__put_airstrips
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - airstrip
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: airstrip.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /airstrips/replaceOrCreate:
+    post:
+      tags:
+        - airstrip
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: airstrip.replaceOrCreate__post_airstrips_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /airstrips/upsertWithWhere:
+    post:
+      tags:
+        - airstrip
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: airstrip.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airstrips/{id}/exists':
+    get:
+      tags:
+        - airstrip
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'airstrip.exists__get_airstrips_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airstrips/{id}':
+    head:
+      tags:
+        - airstrip
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'airstrip.exists__head_airstrips_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - airstrip
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: airstrip.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - airstrip
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'airstrip.replaceById__put_airstrips_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - airstrip
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: airstrip.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - airstrip
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: airstrip.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airstrips/{id}/replace':
+    post:
+      tags:
+        - airstrip
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'airstrip.replaceById__post_airstrips_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /airstrips/findOne:
+    get:
+      tags:
+        - airstrip
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: airstrip.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /airstrips/update:
+    post:
+      tags:
+        - airstrip
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: airstrip.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /airstrips/count:
+    get:
+      tags:
+        - airstrip
+      summary: Count instances of the model matched by where from the data source.
+      operationId: airstrip.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airstrips/{id}/pilots/{nk}/accessTokens/{fk}':
+    get:
+      tags:
+        - airstrip
+      summary: Buscar un elemento relacionado por id para accessTokens.
+      operationId: airstrip.prototype.__findById__pilots__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: nk
+          in: path
+          description: Clave foránea para pilots.
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - airstrip
+      summary: Suprimir un elemento relacionado por id para accessTokens.
+      operationId: airstrip.prototype.__destroyById__pilots__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: nk
+          in: path
+          description: Clave foránea para pilots.
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - airstrip
+      summary: Actualizar un elemento relacionado por id para accessTokens.
+      operationId: airstrip.prototype.__updateById__pilots__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: nk
+          in: path
+          description: Clave foránea para pilots.
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airstrips/{id}/pilots/{nk}/airstripId':
+    get:
+      tags:
+        - airstrip
+      summary: Capta la relación hasOne airstripId.
+      operationId: airstrip.prototype.__get__pilots__airstripId
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: nk
+          in: path
+          description: Clave foránea para pilots.
+          required: true
+          type: string
+          format: JSON
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    post:
+      tags:
+        - airstrip
+      summary: Crea una nueva instancia en airstripId de este modelo.
+      operationId: airstrip.prototype.__create__pilots__airstripId
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: nk
+          in: path
+          description: Clave foránea para pilots.
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - airstrip
+      summary: Actualizar airstripId de este modelo.
+      operationId: airstrip.prototype.__update__pilots__airstripId
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: nk
+          in: path
+          description: Clave foránea para pilots.
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - airstrip
+      summary: Suprime airstripId de este modelo.
+      operationId: airstrip.prototype.__destroy__pilots__airstripId
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: nk
+          in: path
+          description: Clave foránea para pilots.
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airstrips/{id}/pilots/{nk}/accessTokens':
+    get:
+      tags:
+        - airstrip
+      summary: accessTokens consultas de pilots.
+      operationId: airstrip.prototype.__get__pilots__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: nk
+          in: path
+          description: Clave foránea para pilots.
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    post:
+      tags:
+        - airstrip
+      summary: Crea una nueva instancia en accessTokens de este modelo.
+      operationId: airstrip.prototype.__create__pilots__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: nk
+          in: path
+          description: Clave foránea para pilots.
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - airstrip
+      summary: Suprime todos los accessTokens de este modelo.
+      operationId: airstrip.prototype.__delete__pilots__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: nk
+          in: path
+          description: Clave foránea para pilots.
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/airstrips/{id}/pilots/{nk}/accessTokens/count':
+    get:
+      tags:
+        - airstrip
+      summary: Recuentos accessTokens de pilots.
+      operationId: airstrip.prototype.__count__pilots__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: airstrip id
+          required: true
+          type: string
+          format: JSON
+        - name: nk
+          in: path
+          description: Clave foránea para pilots.
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/pilots/{id}/accessTokens/{fk}':
+    get:
+      tags:
+        - pilots
+      summary: Buscar un elemento relacionado por id para accessTokens.
+      operationId: pilots.prototype.__findById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - pilots
+      summary: Suprimir un elemento relacionado por id para accessTokens.
+      operationId: pilots.prototype.__destroyById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - pilots
+      summary: Actualizar un elemento relacionado por id para accessTokens.
+      operationId: pilots.prototype.__updateById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/pilots/{id}/airstripId':
+    get:
+      tags:
+        - pilots
+      summary: Capta la relación hasOne airstripId.
+      operationId: pilots.prototype.__get__airstripId
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    post:
+      tags:
+        - pilots
+      summary: Crea una nueva instancia en airstripId de este modelo.
+      operationId: pilots.prototype.__create__airstripId
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - pilots
+      summary: Actualizar airstripId de este modelo.
+      operationId: pilots.prototype.__update__airstripId
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/airstrip'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/airstrip'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - pilots
+      summary: Suprime airstripId de este modelo.
+      operationId: pilots.prototype.__destroy__airstripId
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/pilots/{id}/accessTokens':
+    get:
+      tags:
+        - pilots
+      summary: accessTokens consultas de pilots.
+      operationId: pilots.prototype.__get__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    post:
+      tags:
+        - pilots
+      summary: Crea una nueva instancia en accessTokens de este modelo.
+      operationId: pilots.prototype.__create__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - pilots
+      summary: Suprime todos los accessTokens de este modelo.
+      operationId: pilots.prototype.__delete__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/pilots/{id}/accessTokens/count':
+    get:
+      tags:
+        - pilots
+      summary: Recuentos accessTokens de pilots.
+      operationId: pilots.prototype.__count__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /pilots:
+    post:
+      tags:
+        - pilots
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: pilots.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - pilots
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: pilots.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - pilots
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: pilots.replaceOrCreate__put_pilots
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - pilots
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: pilots.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /pilots/replaceOrCreate:
+    post:
+      tags:
+        - pilots
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: pilots.replaceOrCreate__post_pilots_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /pilots/upsertWithWhere:
+    post:
+      tags:
+        - pilots
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: pilots.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/pilots/{id}/exists':
+    get:
+      tags:
+        - pilots
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'pilots.exists__get_pilots_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/pilots/{id}':
+    head:
+      tags:
+        - pilots
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'pilots.exists__head_pilots_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - pilots
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: pilots.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - pilots
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'pilots.replaceById__put_pilots_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - pilots
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: pilots.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - pilots
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: pilots.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/pilots/{id}/replace':
+    post:
+      tags:
+        - pilots
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'pilots.replaceById__post_pilots_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /pilots/findOne:
+    get:
+      tags:
+        - pilots
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: pilots.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /pilots/update:
+    post:
+      tags:
+        - pilots
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: pilots.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /pilots/count:
+    get:
+      tags:
+        - pilots
+      summary: Count instances of the model matched by where from the data source.
+      operationId: pilots.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /pilots/login:
+    post:
+      tags:
+        - pilots
+      summary: Login a user with username/email and password.
+      operationId: pilots.login
+      parameters:
+        - name: credentials
+          in: body
+          required: true
+          schema:
+            type: object
+        - name: include
+          in: query
+          description: >-
+            Related objects to include in the response. See the description of
+            return value for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: >+
+              El cuerpo de respuesta contiene propiedades de la AccessToken
+              creada durante el inicio de la sesión.
+
+              Dependiendo del valor del parámetro `include`, el cuerpo puede
+              contener propiedades adicionales:
+
+                - `user` - `U+007BUserU+007D` - Datos del usuario conectado actualmente. (`include=user`)
+
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /pilots/logout:
+    post:
+      tags:
+        - pilots
+      summary: Logout a user with access token.
+      operationId: pilots.logout
+      parameters: []
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/pilots/{id}/verify':
+    post:
+      tags:
+        - pilots
+      summary: Trigger user's identity verification with configured verifyOptions
+      operationId: pilots.prototype.verify
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /pilots/confirm:
+    get:
+      tags:
+        - pilots
+      summary: Confirm a user registration with identity verification token.
+      operationId: pilots.confirm
+      parameters:
+        - name: uid
+          in: query
+          required: true
+          type: string
+        - name: token
+          in: query
+          required: true
+          type: string
+        - name: redirect
+          in: query
+          required: false
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /pilots/reset:
+    post:
+      tags:
+        - pilots
+      summary: Reset password for a user with email.
+      operationId: pilots.resetPassword
+      parameters:
+        - name: options
+          in: body
+          required: true
+          schema:
+            type: object
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /pilots/change-password:
+    post:
+      tags:
+        - pilots
+      summary: Change a user's password.
+      operationId: pilots.changePassword
+      parameters:
+        - name: oldPassword
+          in: formData
+          required: true
+          type: string
+        - name: newPassword
+          in: formData
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /pilots/reset-password:
+    post:
+      tags:
+        - pilots
+      summary: Reset user's password via a password-reset token.
+      operationId: pilots.setPassword
+      parameters:
+        - name: newPassword
+          in: formData
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/pilots/{id}/airstripId/pilots/{fk}':
+    get:
+      tags:
+        - pilots
+      summary: Buscar un elemento relacionado por id para pilots.
+      operationId: pilots.prototype.__findById__airstripId__pilots
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para pilots
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - pilots
+      summary: Suprimir un elemento relacionado por id para pilots.
+      operationId: pilots.prototype.__destroyById__airstripId__pilots
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para pilots
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - pilots
+      summary: Actualizar un elemento relacionado por id para pilots.
+      operationId: pilots.prototype.__updateById__airstripId__pilots
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para pilots
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/pilots/{id}/airstripId/pilots':
+    get:
+      tags:
+        - pilots
+      summary: pilots consultas de airstrip.
+      operationId: pilots.prototype.__get__airstripId__pilots
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    post:
+      tags:
+        - pilots
+      summary: Crea una nueva instancia en pilots de este modelo.
+      operationId: pilots.prototype.__create__airstripId__pilots
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/pilots'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/pilots'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - pilots
+      summary: Suprime todos los pilots de este modelo.
+      operationId: pilots.prototype.__delete__airstripId__pilots
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/pilots/{id}/airstripId/pilots/count':
+    get:
+      tags:
+        - pilots
+      summary: Recuentos pilots de airstrip.
+      operationId: pilots.prototype.__count__airstripId__pilots
+      parameters:
+        - name: id
+          in: path
+          description: pilots id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /events:
+    post:
+      tags:
+        - events
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: events.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/events'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/events'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - events
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: events.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/events'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/events'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - events
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: events.replaceOrCreate__put_events
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/events'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/events'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - events
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: events.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/events'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /events/replaceOrCreate:
+    post:
+      tags:
+        - events
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: events.replaceOrCreate__post_events_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/events'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/events'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /events/upsertWithWhere:
+    post:
+      tags:
+        - events
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: events.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/events'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/events'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/events/{id}/exists':
+    get:
+      tags:
+        - events
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'events.exists__get_events_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/events/{id}':
+    head:
+      tags:
+        - events
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'events.exists__head_events_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+        undefined:
+          description: Unknown error
+      deprecated: false
+    get:
+      tags:
+        - events
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: events.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/events'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    put:
+      tags:
+        - events
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'events.replaceById__put_events_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/events'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/events'
+        undefined:
+          description: Unknown error
+      deprecated: false
+    delete:
+      tags:
+        - events
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: events.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        undefined:
+          description: Unknown error
+      deprecated: false
+    patch:
+      tags:
+        - events
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: events.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: events id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/events'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/events'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  '/events/{id}/replace':
+    post:
+      tags:
+        - events
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'events.replaceById__post_events_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/events'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/events'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /events/findOne:
+    get:
+      tags:
+        - events
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: events.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string (`{"where":{"something":"value"}}`). 
+            See
+            https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries
+            for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/events'
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /events/update:
+    post:
+      tags:
+        - events
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: events.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/events'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+  /events/count:
+    get:
+      tags:
+        - events
+      summary: Count instances of the model matched by where from the data source.
+      operationId: events.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+        undefined:
+          description: Unknown error
+      deprecated: false
+definitions:
+  x-any:
+    properties: {}
+  AccessToken:
+    properties:
+      id:
+        type: string
+      ttl:
+        default: 1209600
+        description: time to live in seconds (2 weeks by default)
+        type: number
+        format: double
+      scopes:
+        description: Array of scopes granted to this access token.
+        type: array
+        items:
+          type: string
+      created:
+        type: string
+        format: date-time
+      userId:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - id
+    additionalProperties: false
+  User:
+    properties:
+      realm:
+        type: string
+      username:
+        type: string
+      email:
+        type: string
+      emailVerified:
+        type: boolean
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - email
+    additionalProperties: false
+  Admin:
+    properties:
+      email:
+        type: string
+      name:
+        type: string
+      username:
+        type: string
+      lastName:
+        type: string
+      phone:
+        type: string
+      type:
+        type: string
+      lastDate:
+        type: string
+        format: date-time
+      status:
+        type: string
+      tags:
+        type: string
+      notes:
+        type: string
+      rate:
+        type: number
+        format: double
+      createdAt:
+        default: $now
+        type: string
+        format: date-time
+      realm:
+        type: string
+      emailVerified:
+        type: boolean
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - email
+      - name
+      - username
+      - lastName
+      - phone
+      - type
+      - lastDate
+      - status
+      - tags
+      - notes
+      - rate
+    additionalProperties: false
+  Mediciones:
+    properties:
+      name:
+        type: string
+      quantity:
+        type: string
+      createdAt:
+        default: $now
+        type: string
+        format: date-time
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - name
+      - quantity
+    additionalProperties: false
+  Calendar:
+    properties:
+      activity:
+        type: string
+      date:
+        $ref: '#/definitions/$date'
+      hour:
+        type: string
+      pilotname:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - activity
+      - date
+      - hour
+      - pilotname
+    additionalProperties: false
+  airplain:
+    properties:
+      airplainmodel:
+        type: string
+      enrollment:
+        type: string
+      certificationM:
+        type: string
+      certificationA:
+        type: string
+      policyS:
+        type: string
+      binnacleV:
+        type: string
+      authorizationOER:
+        type: string
+      airline:
+        type: string
+      createdAt:
+        default: $now
+        type: string
+        format: date-time
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - airplainmodel
+      - enrollment
+      - certificationM
+      - certificationA
+      - policyS
+      - binnacleV
+      - authorizationOER
+      - airline
+    additionalProperties: false
+  flight:
+    properties:
+      enrollment:
+        type: string
+      flightNumber:
+        type: string
+      hour:
+        type: number
+        format: double
+      minutes:
+        type: number
+        format: double
+      createdAt:
+        default: $now
+        type: string
+        format: date-time
+      arrival:
+        type: string
+        format: date-time
+      origin:
+        type: string
+      destination:
+        type: string
+      departure:
+        type: string
+        format: date-time
+      airline:
+        type: string
+      pilotId:
+        type: string
+      copilotId:
+        type: string
+      eventId:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - enrollment
+      - flightNumber
+      - hour
+      - minutes
+      - arrival
+      - origin
+      - destination
+      - departure
+      - airline
+      - pilotId
+      - copilotId
+    additionalProperties: false
+  AppUser:
+    properties:
+      name:
+        type: string
+      role:
+        type: string
+      email:
+        type: string
+      birthday:
+        type: string
+        format: date-time
+      password:
+        type: string
+      airstripname:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - name
+      - role
+      - email
+      - birthday
+      - password
+      - airstripname
+    additionalProperties: false
+  pilots:
+    properties:
+      id:
+        $ref: '#/definitions/ObjectID'
+      email:
+        type: string
+      name:
+        type: string
+      userName:
+        type: string
+      phone:
+        type: string
+      Type:
+        type: string
+      lastName:
+        type: string
+      status:
+        type: string
+      createdAt:
+        type: string
+      realm:
+        type: string
+      username:
+        type: string
+      emailVerified:
+        type: boolean
+      pilots:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - email
+      - name
+      - userName
+      - phone
+      - createdAt
+    additionalProperties: false
+  airstrip:
+    properties:
+      name:
+        type: string
+      state:
+        type: string
+      operationType:
+        type: string
+      serviceType:
+        type: string
+      classification:
+        type: string
+      pilotId:
+        type: string
+      flightId:
+        type: string
+      lat:
+        type: string
+      lon:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+      airstripId:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - name
+      - state
+      - operationType
+      - serviceType
+      - classification
+    additionalProperties: false
+  events:
+    properties:
+      start:
+        type: string
+      end:
+        type: string
+      title:
+        default: nuevo evento
+        type: string
+      content:
+        default: descripcion del evento
+        type: string
+      color:
+        type: string
+      origin:
+        default: GDL
+        type: string
+      destination:
+        default: CDMX
+        type: string
+      firstPilotId:
+        type: string
+      secondPilotId:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - start
+      - end
+      - title
+      - content
+      - color
+      - origin
+      - destination
+    additionalProperties: false
+  ObjectID:
+    type: string
+    pattern: '^[a-fA-F\d]{24}$'
+basePath: /api
+swagger: '2.0'
+info:
+  x-ibm-name: doven-api
+  version: 1.0.0
+  title: doven-api
+schemes:
+  - https
+host: $(catalog.host)
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+    clientSecretHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  catalogs:
+    apic-dev:
+      properties:
+        runtime-url: $(TARGET_URL)
+    sb:
+      properties:
+        runtime-url: 'http://localhost:4001'
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(runtime-url)$(request.path)$(request.search)
