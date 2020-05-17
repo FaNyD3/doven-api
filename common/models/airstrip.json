@@ -26,14 +26,6 @@
       "type": "string",
       "required": true
     },
-    "pilotId": {
-      "type": "string",
-      "required": false
-    },
-    "flightId": {
-      "type": "string",
-      "required": false
-    },
     "lat": {
       "type": "string",
       "required": false
@@ -43,6 +35,10 @@
       "required": false
     },
     "airstripPilotsId": {
+      "type": "string",
+      "required": false
+    },
+    "airstripFlightsId": {
       "type": "string",
       "required": false
     }

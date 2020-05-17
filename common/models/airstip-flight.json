@@ -1,0 +1,21 @@
+{
+  "name": "airstipFlight",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "airstripId": {
+      "type": "string",
+      "required": true
+    },
+    "flightId": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

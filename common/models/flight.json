@@ -64,6 +64,10 @@
     "eventId": {
       "type": "string",
       "required": false
+    },
+    "airstripFlightId": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],
