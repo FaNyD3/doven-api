@@ -18,7 +18,7 @@
       "type": "string",
       "required": true
     },
-    "username": {
+    "userName": {
       "type": "string",
       "required": true
     },
@@ -30,34 +30,18 @@
       "type": "string",
       "required": true
     },
-    "type": {
-      "type": "string",
-      "required": true
-    },
-    "lastDate": {
-      "type": "date",
-      "required": true
-    },
     "status": {
       "type": "string",
-      "required": true
-    },
-    "tags": {
-      "type": "string",
-      "required": true
-    },
-    "notes": {
-      "type": "string",
-      "required": true
-    },
-    "rate": {
-      "type": "number",
       "required": true
     },
     "createdAt": {
       "type": "date",
       "required": false,
       "default": "$now"
+    },
+    "userType": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],

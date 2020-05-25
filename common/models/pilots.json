@@ -48,6 +48,10 @@
     "airstripPilotsId": {
       "type": "string",
       "required": false
+    },
+    "userType": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
