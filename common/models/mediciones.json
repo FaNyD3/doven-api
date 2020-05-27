@@ -10,7 +10,7 @@
       "type": "string",
       "required": true
     },
-    "quantity": {
+    "value": {
       "type": "string",
       "required": true
     },
