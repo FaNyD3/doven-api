@@ -30,12 +30,10 @@
     },
     "origin": {
       "type": "string",
-      "required": true,
       "default": "GDL"
     },
     "destination": {
       "type": "string",
-      "required": true,
       "default": "CDMX"
     },
     "firstPilotId": {
