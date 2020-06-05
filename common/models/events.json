@@ -43,6 +43,10 @@
     "secondPilotId": {
       "type": "string",
       "required": false
+    },
+    "notified": {
+      "type": "Boolean",
+      "required": true
     }
   },
   "validations": [],
