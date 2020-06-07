@@ -1,56 +1,56 @@
 {
-  "name": "events",
-  "plural": "events",
-  "idInjection": true,
-  "options": {
-    "validateUpsert": true
-  },
-  "properties": {
-    "start": {
-      "type": "string",
-      "required": true
+    "name": "events",
+    "plural": "events",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
     },
-    "end": {
-      "type": "string",
-      "required": true
+    "properties": {
+        "start": {
+            "type": "string",
+            "required": true
+        },
+        "end": {
+            "type": "string",
+            "required": true
+        },
+        "title": {
+            "type": "string",
+            "required": true,
+            "default": "nuevo evento"
+        },
+        "content": {
+            "type": "string",
+            "required": true,
+            "default": "descripcion del evento"
+        },
+        "color": {
+            "type": "string",
+            "required": true
+        },
+        "origin": {
+            "type": "string",
+            "default": "GDL"
+        },
+        "destination": {
+            "type": "string",
+            "default": "CDMX"
+        },
+        "firstPilotId": {
+            "type": "string",
+            "required": false
+        },
+        "secondPilotId": {
+            "type": "string",
+            "required": false
+        },
+        "seenBy": {
+            "type": "string",
+            "required": false
+        }
     },
-    "title": {
-      "type": "string",
-      "required": true,
-      "default": "nuevo evento"
-    },
-    "content": {
-      "type": "string",
-      "required": true,
-      "default": "descripcion del evento"
-    },
-    "color": {
-      "type": "string",
-      "required": true
-    },
-    "origin": {
-      "type": "string",
-      "default": "GDL"
-    },
-    "destination": {
-      "type": "string",
-      "default": "CDMX"
-    },
-    "firstPilotId": {
-      "type": "string",
-      "required": false
-    },
-    "secondPilotId": {
-      "type": "string",
-      "required": false
-    },
-    "seenBy": {
-      "type": "string",
-      "required": true
-    }
-  },
-  "validations": [],
-  "relations": {},
-  "acls": [],
-  "methods": {}
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
 }
