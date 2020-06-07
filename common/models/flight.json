@@ -68,6 +68,10 @@
     "airstripFlightId": {
       "type": "string",
       "required": false
+    },
+    "airstripId": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],

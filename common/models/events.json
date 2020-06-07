@@ -44,8 +44,8 @@
       "type": "string",
       "required": false
     },
-    "notified": {
-      "type": "Boolean",
+    "seenBy": {
+      "type": "string",
       "required": true
     }
   },
